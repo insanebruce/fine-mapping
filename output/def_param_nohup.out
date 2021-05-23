@@ -1,0 +1,56 @@
+
+==================================================================
+     [1;33m/\[0m
+    [1;33m/__\[0m[1;31m\[0m         This is a pipeline for statistical fine-mapping
+   [1;33m/[0m  [1;31m---\[0m        Author: Jianhua Wang
+  [1;33m/\[0m      [1;31m\[0m       Date:   04-09-2019
+ [1;33m/[0m[1;32m/\[0m[1;33m\[0m     [1;31m/\[0m
+ [1;32m/  \   /[0m[1;31m/__\[0m
+[1;32m`----`-----[0m
+==================================================================
+    
+loading input file
+split files
+prepare input files of finemapping tools
+13
+run finemapping tools
+--- PAINTOR exec time: 64s ---
+--- CAVIARBF exec time: 68s ---
+--- FINEMAP exec time: 39s ---
+--- PAINTOR exec time: 53s ---
+--- CAVIARBF exec time: 82s ---
+--- FINEMAP exec time: 39s ---
+--- PAINTOR exec time: 28s ---
+--- CAVIARBF exec time: 34s ---
+--- FINEMAP exec time: 21s ---
+--- PAINTOR exec time: 34s ---
+--- CAVIARBF exec time: 38s ---
+--- FINEMAP exec time: 24s ---
+--- PAINTOR exec time: 27s ---
+--- CAVIARBF exec time: 38s ---
+--- FINEMAP exec time: 21s ---
+--- PAINTOR exec time: 41s ---
+--- CAVIARBF exec time: 46s ---
+--- FINEMAP exec time: 20s ---
+--- PAINTOR exec time: 80s ---
+--- CAVIARBF exec time: 90s ---
+--- FINEMAP exec time: 35s ---
+--- PAINTOR exec time: 77s ---
+--- CAVIARBF exec time: 93s ---
+--- FINEMAP exec time: 35s ---
+--- PAINTOR exec time: 122s ---
+--- CAVIARBF exec time: 97s ---
+--- FINEMAP exec time: 26s ---
+--- PAINTOR exec time: 14s ---
+--- CAVIARBF exec time: 19s ---
+--- FINEMAP exec time: 12s ---
+--- PAINTOR exec time: 131s ---
+--- CAVIARBF exec time: 67s ---
+--- FINEMAP exec time: 21s ---
+--- PAINTOR exec time: 154s ---
+--- CAVIARBF exec time: 93s ---
+--- FINEMAP exec time: 19s ---
+--- PAINTOR exec time: 269s ---
+--- CAVIARBF exec time: 45s ---
+--- FINEMAP exec time: 23s ---
+gather results
