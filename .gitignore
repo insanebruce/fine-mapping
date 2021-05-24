@@ -1,4 +1,8 @@
 *.swp
 **/.DS_Store
 IGAP_stage_1.txt
-summary.txt
+summary.*
+variants.*
+output/*.pdf
+images/*_credset.png
+.ipynb_checkpoints/
