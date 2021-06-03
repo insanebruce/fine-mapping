@@ -10,7 +10,7 @@ pop_list = ['EUR']
 
 # download 1000G phase3 VCF files
 
-# call('mkdir -p ./ld/vcf',shell=True)
+call('mkdir -p ./ld/vcf',shell=True)
 
 # for chromosome in range(1,23):
 #     call(f'wget -c ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr{chromosome}.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz -P ./ld/vcf',shell=True)
@@ -19,11 +19,11 @@ pop_list = ['EUR']
 # call('wget -c ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/integrated_call_samples_v3.20130502.ALL.panel -P ./ld/vcf',shell=True)
 
 # get sample id from super population
-# for pop in pop_list:
-#     call(f'grep "{pop}" ./ld/vcf/integrated_call_samples_v3.20130502.ALL.panel| cut -f 1 > ./ld/vcf/{pop}.sample',shell=True)
-#     call(f'mkdir -p ./ld/vcf/{pop}',shell=True)
-#     call(f'mkdir -p ./ld/vcf/{pop}_1',shell=True)
-#     call(f'mkdir -p ./ld/txt/{pop}',shell=True)
+for pop in pop_list:
+    call(f'grep "{pop}" ./ld/vcf/integrated_call_samples_v3.20130502.ALL.panel| cut -f 1 > ./ld/vcf/{pop}.sample',shell=True)
+    call(f'mkdir -p ./ld/vcf/{pop}',shell=True)
+    call(f'mkdir -p ./ld/vcf/{pop}_1',shell=True)
+    call(f'mkdir -p ./ld/txt/{pop}',shell=True)
 
 # split vcf by population and block
 blocks = pd.read_csv('./blocks.txt',sep='\t')
@@ -33,19 +33,19 @@ def split_reference(pop,chr_id, start, stop):
     call(f'bcftools norm --rm-dup both ./ld/vcf/{pop}_1/{pop}_{chr_id}_{start}_{stop}.vcf.gz -O z -o ./ld/vcf/{pop}/{pop}_{chr_id}_{start}_{stop}.vcf.gz',shell=True)
     call(f'tabix -f ./ld/vcf/{pop}/{pop}_{chr_id}_{start}_{stop}.vcf.gz',shell=True)
 
-# p = Pool(30)
-# for pop in pop_list:
-#     if pop in ['EUR','AMR']:
-#         block = blocks[blocks['pop']=='EUR']
-#     elif pop in ['EAS','SAS']:
-#         block = blocks[blocks['pop']=='ASN']
-#     else:
-#         block = blocks[blocks['pop']=='AFR']
-#     for i in block.index:
-#         chr_id, start, stop = block.loc[i].values[:-1]
-#         p.apply_async(split_reference,(pop, chr_id, start, stop))
-# p.close()
-# p.join()
+p = Pool(30)
+for pop in pop_list:
+    if pop in ['EUR','AMR']:
+        block = blocks[blocks['pop']=='EUR']
+    elif pop in ['EAS','SAS']:
+        block = blocks[blocks['pop']=='ASN']
+    else:
+        block = blocks[blocks['pop']=='AFR']
+    for i in block.index:
+        chr_id, start, stop = block.loc[i].values[:-1]
+        p.apply_async(split_reference,(pop, chr_id, start, stop))
+p.close()
+p.join()
 
 
 # convert vcf to txt (genotype matrix)
