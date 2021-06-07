@@ -27,7 +27,7 @@
 |   |   └── ...
 |   ├── manhattan.png
 |   └── ...
-├── images                 # input files
+├── input                  # input files
 |   └── README
 ├── output                 # output files 
 |   ├── def_param_tot_cred_set.txt
