@@ -65,7 +65,7 @@
 
 GWAS summary statistics used here can be downloaded from this [link](http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST002001-GCST003000/GCST002245/).
 
-`bin\00_set_up.sh`, `ref\01_prepare_reference.py`, and `fine_map_pipe.py` are adapted from this [repository](https://github.com/mulinlab/CAUSALdb-finemapping-pip).
+`bin/00_set_up.sh`, `ref/01_prepare_reference.py`, and `fine_map_pipe.py` are adapted from this [repository](https://github.com/mulinlab/CAUSALdb-finemapping-pip).
 
 *PAINTOR*: [source](https://github.com/gkichaev/PAINTOR_V3.0)
 
