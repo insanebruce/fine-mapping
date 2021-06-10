@@ -43,7 +43,7 @@
 └── README.md
 ```
 
-## Sumpplmentary Data
+## supplementary Data
 
 `output/summary_significant_blocks.txt`: identified 13 causal blocks.
 
